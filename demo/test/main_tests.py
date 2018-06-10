@@ -1,5 +1,8 @@
 import unittest
-import demo.src.data_wrangler as tc
+try:
+    from demo.src import data_wrangler
+except ImportError:
+    from .demo.src import data_wrangler
 
 
 class TestStringMethods(unittest.TestCase):
@@ -9,12 +12,12 @@ class TestStringMethods(unittest.TestCase):
         self.filename = 'data/demo.csv'
 
     def test_read(self):
-        df = tc.read_pandas_dataframe(self.filename)
+        df = data_wrangler.read_pandas_dataframe(self.filename)
         self.assertEqual(len(df), 3)
         self.assertListEqual(df.columns.tolist(), ['id','name','date_registration'])
 
     def test_filter(self):
-        df = tc.read_pandas_dataframe(self.filename)
+        df = data_wrangler.read_pandas_dataframe(self.filename)
         df_filtered = tc.filter_bad_names(df)
         self.assertEqual(len(df_filtered),2)
 
