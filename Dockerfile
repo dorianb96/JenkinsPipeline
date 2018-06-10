@@ -8,7 +8,9 @@ RUN apt-get update
 COPY requirements.txt requirements.txt
 
 # Copying requirements.txt file
-COPY demo .
+COPY src .
+COPY test .
+COPY requirements.txt .
 
 # pip install
 RUN pip install --no-cache -r requirements.txt
