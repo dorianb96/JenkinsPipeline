@@ -2,3 +2,4 @@
 .cache
 Jenkinsfile
 Dockerfile
+jenkins_start.sh
