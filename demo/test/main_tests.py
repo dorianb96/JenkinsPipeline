@@ -1,8 +1,5 @@
 import unittest
-try:
-    from demo.src import data_wrangler
-except ImportError:
-    from .demo.src import data_wrangler
+from demo.src import data_wrangler
 
 
 class TestStringMethods(unittest.TestCase):
@@ -18,7 +15,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_filter(self):
         df = data_wrangler.read_pandas_dataframe(self.filename)
-        df_filtered = tc.filter_bad_names(df)
+        df_filtered = data_wrangler.filter_bad_names(df)
         self.assertEqual(len(df_filtered),2)
 
 
