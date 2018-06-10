@@ -5,7 +5,7 @@ class TestStringMethods(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
         super(TestStringMethods, self).__init__(*args, **kwargs)
-        self.filename = 'data/demo.csv'
+        self.filename = './data/demo.csv'
 
     def test_read(self):
         df = data_wrangler.read_pandas_dataframe(self.filename)
