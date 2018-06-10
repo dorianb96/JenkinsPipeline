@@ -16,7 +16,12 @@ pipeline {
     stage('Test') {
       steps {
         sh '''
-        pytest --pyargs test --junitxml results.xml'''
+        pytest --pyargs test --junitxml test-reports/results.xml'''
+      }
+      post {
+        always {
+            junit 'test-reports/results.xml'
+        }
       }
     }
   }
