@@ -17,7 +17,6 @@ du -h -d 2'''
         pip install isort
         pip install pylint
 pylint ./demo/src/data_wrangler.py -r no || exit 0
-        pylint ./demo/test/main_tests.py -r no || exit 0
 '''
       }
     }
