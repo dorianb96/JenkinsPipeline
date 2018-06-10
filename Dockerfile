@@ -10,6 +10,7 @@ COPY requirements.txt requirements.txt
 # Copying requirements.txt file
 COPY src .
 COPY test .
+COPY test_data .
 COPY requirements.txt .
 
 # pip install
