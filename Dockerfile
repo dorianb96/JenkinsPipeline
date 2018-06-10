@@ -12,3 +12,9 @@ COPY demo .
 
 # pip install
 RUN pip install --no-cache -r requirements.txt
+
+# install testing requirements
+RUN pip install astroid
+RUN pip install isort
+RUN pip install pylint
+RUN pip install pytest
