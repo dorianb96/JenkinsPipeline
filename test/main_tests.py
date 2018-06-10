@@ -1,6 +1,5 @@
 import unittest
-from demo.src import data_wrangler
-
+from src import data_wrangler
 
 class TestStringMethods(unittest.TestCase):
 
